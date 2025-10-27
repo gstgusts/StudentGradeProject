@@ -3,3 +3,6 @@ https://localhost:7213/swagger/index.html
 https://localhost:7213/api-docs/
 https://localhost:7213/scalar/
 
+Scalar.AspNetCore
+Swashbuckle.AspNetCore.ReDoc
+Swashbuckle.AspNetCore.SwaggerUI
