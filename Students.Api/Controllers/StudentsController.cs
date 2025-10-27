@@ -8,11 +8,11 @@ namespace Students.Api.Controllers
     [ApiController]
     public class StudentsController : ControllerBase
     {
-        private StudentDbContext _db;
+        private readonly StudentDbContext _db;
 
-        public StudentsController()
+        public StudentsController(StudentDbContext db)
         {
-            _db = new StudentDbContext();
+            _db = db;
         }
 
         [HttpGet]

@@ -14,10 +14,11 @@ namespace Students.DataAccess
 
         public StudentDbContext()
         {
-            
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(
-            "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\StudentGradeProject\\Students.DataAccess\\StudentDb.mdf;Integrated Security=True");
+        public StudentDbContext(DbContextOptions<StudentDbContext> options) : base(options) { }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(
+        //    "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\StudentGradeProject\\Students.DataAccess\\StudentDb.mdf;Integrated Security=True");
     }
 }

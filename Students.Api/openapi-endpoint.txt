@@ -6,3 +6,6 @@ https://localhost:7213/scalar/
 Scalar.AspNetCore
 Swashbuckle.AspNetCore.ReDoc
 Swashbuckle.AspNetCore.SwaggerUI
+
+//"StudentDatabase": "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\StudentGradeProject\\Students.DataAccess\\StudentDb.mdf;Integrated Security=True",
+//"StudentDatabase": "Server=(localdb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\StudentDb.mdf;Trusted_Connection=True;MultipleActiveResultSets=true",

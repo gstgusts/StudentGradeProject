@@ -1,5 +1,7 @@
 
+using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
+using Students.DataAccess;
 
 namespace Students.Api
 {
@@ -9,11 +11,20 @@ namespace Students.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            var dataDir = Path.GetFullPath(Path.Combine(builder.Environment.ContentRootPath, "..", "Students.DataAccess"));
+            AppDomain.CurrentDomain.SetData("DataDirectory", dataDir);
+
+            var cs = builder.Configuration.GetConnectionString("StudentDatabase")
+                     ?? throw new InvalidOperationException("Missing ConnectionStrings:StudentDatabase");
+            if (cs.StartsWith("\"") && cs.EndsWith("\"")) cs = cs.Trim('"');
+
             // Add services to the container.
 
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+
+            builder.Services.AddDbContext<StudentDbContext>(o => o.UseSqlServer(cs));
 
             var app = builder.Build();
 
