@@ -23,6 +23,8 @@ namespace Students.DataAccess
 
         public DateTime? Date { get; set; }
 
-        public Student Student { get; set; }
+        //public Student Student { get; set; }
+
+        public int StudentId { get; set; }
     }
 }

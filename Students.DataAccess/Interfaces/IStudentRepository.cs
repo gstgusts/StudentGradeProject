@@ -10,6 +10,11 @@ namespace Students.DataAccess.Interfaces
     {
         IEnumerable<Student> GetAll();
 
-        void Add(Student student);
+        int Add(Student student);
+
+        Student GetById(int studentId);
+        Student Update(Student student);
+        void Delete(int studentId);
+        IEnumerable<Grade> GetGrades(int studentId);
     }
 }

@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 using Students.DataAccess;
+using Students.DataAccess.Interfaces;
+using Students.DataAccess.Services;
 
 namespace Students.Api
 {
@@ -25,6 +27,8 @@ namespace Students.Api
             builder.Services.AddOpenApi();
 
             builder.Services.AddDbContext<StudentDbContext>(o => o.UseSqlServer(cs));
+
+            builder.Services.AddScoped<IStudentRepository, StudentRepositoryService>();
 
             var app = builder.Build();
 
