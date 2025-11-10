@@ -1,0 +1,15 @@
+﻿@model IndexModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>@Model.Greeting</h1>
+    <ol>
+        @foreach (var student in Model.Students)
+        {
+            <li>@student.Name</li>
+        }
+    </ol>
+</div>
