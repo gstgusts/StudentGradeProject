@@ -18,6 +18,7 @@ namespace Students.DataAccess
 
         public StudentDbContext(DbContextOptions<StudentDbContext> options) : base(options) { }
 
+        // Uncomment if testing WPF MvvM
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(
         //    "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\StudentGradeProject\\Students.DataAccess\\StudentDb.mdf;Integrated Security=True");
     }

@@ -4,9 +4,45 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Students.WpfWithMvvM"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:viewModels="clr-namespace:Students.WpfWithMvvM.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>
     <Grid>
-
+        <StackPanel Orientation="Vertical">
+            <Label>Students</Label>
+            <DataGrid AutoGenerateColumns="False" x:Name="LstStudents"
+                      SelectionMode="Single"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      ItemsSource="{Binding Students, Mode=OneWay}"
+                      SelectedItem="{Binding SelectedStudent, Mode=TwoWay}"
+                      >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Code" Width="100" Binding="{Binding Code}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Name" Width="100" Binding="{Binding Name}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Surname" Width="100" Binding="{Binding Surname}"></DataGridTextColumn>
+                </DataGrid.Columns>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectStudentCommand}"></i:InvokeCommandAction>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </DataGrid>
+            <Label>Grades</Label>
+            <DataGrid AutoGenerateColumns="False" x:Name="LstGrades"
+                      SelectionMode="Single"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      ItemsSource="{Binding Grades, Mode=OneWay}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Subject" Width="100" Binding="{Binding Subject}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Grade" Width="100" Binding="{Binding Value}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </Window>

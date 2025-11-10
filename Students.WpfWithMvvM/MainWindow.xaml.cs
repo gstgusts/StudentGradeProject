@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Students.WpfWithMvvM.ViewModels;
 
 namespace Students.WpfWithMvvM
 {
@@ -16,9 +17,20 @@ namespace Students.WpfWithMvvM
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainViewModel _viewModel;
+
         public MainWindow()
         {
             InitializeComponent();
+            InitModel();
+        }
+
+        private void InitModel()
+        {
+            _viewModel = new MainViewModel();
+            _viewModel.Load();
+
+            DataContext = _viewModel;
         }
     }
 }
