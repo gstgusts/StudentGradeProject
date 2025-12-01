@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Students.WebMVC", "Students
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Students.WpfWithMvvM", "Students.WpfWithMvvM\Students.WpfWithMvvM.csproj", "{128A4751-C7CD-4A8A-88DF-1D9CFC03F5D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Students.MAUI", "Students.MAUI\Students.MAUI.csproj", "{F33E5A84-5F37-4582-906A-A46C2D329AD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{128A4751-C7CD-4A8A-88DF-1D9CFC03F5D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{128A4751-C7CD-4A8A-88DF-1D9CFC03F5D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{128A4751-C7CD-4A8A-88DF-1D9CFC03F5D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F33E5A84-5F37-4582-906A-A46C2D329AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F33E5A84-5F37-4582-906A-A46C2D329AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F33E5A84-5F37-4582-906A-A46C2D329AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F33E5A84-5F37-4582-906A-A46C2D329AD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
