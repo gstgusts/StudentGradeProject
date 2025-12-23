@@ -30,6 +30,14 @@ namespace Students.Api
 
             builder.Services.AddScoped<IStudentRepository, StudentRepositoryService>();
 
+            // enable cors
+            builder.Services.AddCors(o =>
+            {
+                o.AddDefaultPolicy(p => p.AllowAnyOrigin()
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod());
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -53,7 +61,8 @@ namespace Students.Api
 
             app.UseAuthorization();
 
-
+            // default cors policy
+            app.UseCors();
             app.MapControllers();
 
             app.Run();
